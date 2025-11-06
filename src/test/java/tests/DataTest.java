@@ -11,5 +11,7 @@ public class DataTest {
 	String[] addresses = { "123 King Street, Amman", "45 Rainbow Road, Irbid", "22 Queen Rania St, Zarqa",
 			"9 Petra Avenue, Aqaba", "78 Gardens Blvd, Madaba" };
 	String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\Images\\profile.jpg";
+	String name = "Rand";
+	boolean[] accept = { true, false };
 
 }

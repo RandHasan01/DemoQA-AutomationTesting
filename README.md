@@ -1,7 +1,8 @@
 # 🧪 DemoQA-AutomationTesting
 
-A simple automation testing framework using **Java**, **Selenium**, **TestNG**, and **Maven**  
-for testing [DemoQA](https://demoqa.com).
+This project is an automation testing framework built using **Java**, **Selenium**, **TestNG**, and **Maven**.  
+It automates testing on the [DemoQA](https://demoqa.com/) website following the **Page Object Model (POM)** design pattern.  
+The framework was created to validate multiple UI scenarios such as **Forms**, **Check Box**, and **Alerts**.
 
 ---
 
@@ -21,6 +22,18 @@ for testing [DemoQA](https://demoqa.com).
 
 ---
 
+
+# ⚙️ Assumptions and Limitations
+- Tests are executed on the Google Chrome browser.
+
+- The target website (DemoQA) is dynamic and may occasionally change,which could require updating locators.
+
+- No reporting tools or parallel execution are implemented the focus is on simplicity and framework structure.
+
+- Built as a learning framework, easily extendable with reporting or cross-browser testing in the future.
+
+---  
+  
 ## 🧱 Framework Structure
 
 ```bash
@@ -42,17 +55,4 @@ DemoQA-AutomationTesting/
 ├── pom.xml                       # Maven configuration file
 └── README.md                     # Project documentation
 
-```bash
-
 🧠 The framework follows the Page Object Model (POM) design pattern to improve code readability, reusability, and maintenance.
-
----
-
-# ⚙️ Assumptions and Limitations
-- Tests are executed on the Google Chrome browser.
-
-- The target website (DemoQA) is dynamic and may occasionally change,which could require updating locators.
-
-- No reporting tools or parallel execution are implemented the focus is on simplicity and framework structure.
-
-- Built as a learning framework, easily extendable with reporting or cross-browser testing in the future.

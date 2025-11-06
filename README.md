@@ -21,9 +21,9 @@ for testing [DemoQA](https://demoqa.com).
 
 ---
 
-# 🧱 Framework Structure
-bash
-Copy code
+## 🧱 Framework Structure
+
+```bash
 DemoQA-AutomationTesting/
 │
 ├── src/
@@ -42,18 +42,16 @@ DemoQA-AutomationTesting/
 ├── pom.xml                       # Maven configuration file
 └── README.md                     # Project documentation
 
-### 🧠 The framework follows the Page Object Model (POM) design pattern
-to improve code readability, reusability, and maintenance.
+
+🧠 The framework follows the Page Object Model (POM) design pattern to improve code readability, reusability, and maintenance.
 
 ---
 
 # ⚙️ Assumptions and Limitations
-Tests are executed on the Google Chrome browser.
+- Tests are executed on the Google Chrome browser.
 
-The target website (DemoQA) is dynamic and may occasionally change,
-which could require updating locators.
+- The target website (DemoQA) is dynamic and may occasionally change,which could require updating locators.
 
-No reporting tools or parallel execution are implemented —
-the focus is on simplicity and framework structure.
+- No reporting tools or parallel execution are implemented the focus is on simplicity and framework structure.
 
-Built as a learning framework, easily extendable with reporting or cross-browser testing in the future.
+- Built as a learning framework, easily extendable with reporting or cross-browser testing in the future.

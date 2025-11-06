@@ -1,25 +1,29 @@
 # 🧪 DemoQA-AutomationTesting
 
+A simple automation testing framework using **Java**, **Selenium**, **TestNG**, and **Maven**  
+for testing [DemoQA](https://demoqa.com).
+
 ---
 
-## 🚀 **How to Run the Tests**
+## 🚀 How to Run the Tests
 
-This automation testing framework was built using **Java**, **Selenium**, **TestNG**, and **Maven**.  
-To run the tests, make sure you have the following installed:
+### 🧩 Requirements
+- Java 8 or higher  
+- Maven  
+- TestNG plugin in Eclipse  
+- Google Chrome and compatible ChromeDriver  
 
-- **Java 8 or higher**  
-- **Maven**  
-- **TestNG plugin** in Eclipse  
-- **Google Chrome** and a matching **ChromeDriver**
-
-### **Steps to Execute**
+### ▶️ Steps to Execute
 1. Open the project in **Eclipse**.  
-2. Let **Maven** download the required dependencies automatically.  
+2. Allow **Maven** to download dependencies automatically.  
 3. Run any test by right-clicking on the test class (e.g., `TestFormsPage.java`) →  
-   **Run As → TestNG Test**.
+   **Run As → TestNG Test**.  
 
-## 🧱 Framework StructureDemoQA-AutomationTesting/
-```bash
+---
+
+# 🧱 Framework Structure
+bash
+Copy code
 DemoQA-AutomationTesting/
 │
 ├── src/
@@ -38,21 +42,18 @@ DemoQA-AutomationTesting/
 ├── pom.xml                       # Maven configuration file
 └── README.md                     # Project documentation
 
-
-The framework follows the **Page Object Model (POM)** design pattern  
+### 🧠 The framework follows the Page Object Model (POM) design pattern
 to improve code readability, reusability, and maintenance.
 
 ---
 
-## ⚙️ Assumptions and Limitations
+# ⚙️ Assumptions and Limitations
+Tests are executed on the Google Chrome browser.
 
-- Tests are designed and executed on the **Google Chrome** browser.  
-- The website under test ([DemoQA](https://demoqa.com)) is dynamic and may change occasionally,  
-  which could require updating locators.  
-- No reporting tools or parallel execution are implemented —  
-  the focus is on simplicity and structure.  
-- The framework follows **POM** to maintain clarity and modularity.
+The target website (DemoQA) is dynamic and may occasionally change,
+which could require updating locators.
 
----
+No reporting tools or parallel execution are implemented —
+the focus is on simplicity and framework structure.
 
-
+Built as a learning framework, easily extendable with reporting or cross-browser testing in the future.

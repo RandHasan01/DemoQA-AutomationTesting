@@ -42,6 +42,7 @@ DemoQA-AutomationTesting/
 ├── pom.xml                       # Maven configuration file
 └── README.md                     # Project documentation
 
+```bash
 
 🧠 The framework follows the Page Object Model (POM) design pattern to improve code readability, reusability, and maintenance.
 

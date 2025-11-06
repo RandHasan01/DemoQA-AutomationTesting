@@ -21,4 +21,4 @@ public class TestElementsPage extends BaseTest {
 		System.out.println(resutlOfCheckbox);
 	}
 
-}//do assertion to check if the slected checkbox in resutl 
+}

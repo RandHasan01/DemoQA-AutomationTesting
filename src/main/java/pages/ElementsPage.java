@@ -64,5 +64,4 @@ public class ElementsPage {
 		}
 		return result;
 	}
-}// dont forget there is a problem here the code dont give you all checkboxs
-// selected
+}

@@ -1,19 +1,15 @@
 package pages;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.checkerframework.checker.units.qual.s;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FormsPage {
 
@@ -137,27 +133,28 @@ public class FormsPage {
 		birthDaySection.click();
 		WebElement calenderPopper = driver.findElement(dateOfBirthPopper);
 
-		WebElement monthElement = calenderPopper.findElement(monthDropdown);
-		List<WebElement> months = monthElement.findElements(By.tagName("option"));
-		Select monthSelect = new Select(monthElement);
-		int randomMonth = rand.nextInt(months.size());
-		monthSelect.selectByIndex(randomMonth);
-		String monthName = months.get(randomMonth).getText();
-
 		WebElement yearSelect = calenderPopper.findElement(yearDropdown);
 		List<WebElement> years = yearSelect.findElements(By.tagName("option"));
 		Select select = new Select(yearSelect);
 		int randomYear = rand.nextInt(years.size());
-		select.selectByIndex(randomYear);
 		String yearValue = years.get(randomYear).getText();
+		select.selectByIndex(randomYear);
+
+		WebElement monthElement = calenderPopper.findElement(monthDropdown);
+		List<WebElement> months = monthElement.findElements(By.tagName("option"));
+		Select monthSelect = new Select(monthElement);
+		int randomMonth = rand.nextInt(months.size());
+		String monthName = months.get(randomMonth).getText();
+
+		monthSelect.selectByIndex(randomMonth);
 
 		WebElement monthBlock = calenderPopper.findElement(monthSection);
 		List<WebElement> weeks = monthBlock.findElements(weekRows);
 		int randomWeek = rand.nextInt(weeks.size());
 		List<WebElement> days = weeks.get(randomWeek).findElements(daysInWeek);
 		int randomDay = rand.nextInt(days.size());
-		days.get(randomDay).click();
 		String dayText = days.get(randomDay).getText();
+		days.get(randomDay).click();
 
 		selectedBirthDay = dayText + " " + monthName + "," + yearValue;
 		return selectedBirthDay;
@@ -165,8 +162,7 @@ public class FormsPage {
 	}
 
 	public String enterYourSubject(String[] subjects) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-	    WebElement subject = wait.until(ExpectedConditions.elementToBeClickable(subjectInput));
+		WebElement subject = driver.findElement(subjectInput);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", subject);
 		subject.click();
 		int randomsubject = rand.nextInt(subjects.length);

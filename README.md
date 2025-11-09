@@ -37,20 +37,31 @@ The framework was created to validate multiple UI scenarios such as **Forms**, *
 ## 🧱 Framework Structure
 
 ```bash
-DemoQA-AutomationTesting/
+DemoQA/
 │
 ├── src/
-│   ├── main/java/pages/          # Page Object Model classes
-│   │   ├── BasePage.java
-│   │   ├── FormsPage.java
-│   │   ├── CheckBoxPage.java
-│   │   └── AlertsPage.java
+│   ├── main/
+│   │   ├── resources/
+│   │   │   ├── config.properties
+│   │   ├── java/
+│   │   │   ├── pages/          # Page Object Model classes
+│   │   │   │   ├── FormsPage.java
+│   │   │   │   ├── CheckBoxPage.java
+│   │   │   │   └── AlertsPage.java
+│   │   │   ├── utils/ 
+│   │   │   │   ├── DriverFactory.java
+│   │   │   │   └── ConfigReader.java
 │   │
-│   └── test/java/tests/          # TestNG test classes
-│       ├── BaseTest.java
-│       ├── TestFormsPage.java
-│       ├── TestCheckBoxPage.java
-│       └── TestAlertsPage.java
+│   └── test/
+│   │   ├── resources
+│   │   |    └── Images
+│   │   │    |   ├── profile.jpg
+│   │   └── java/tests/          # TestNG test classes
+│   │   |   ├── DataTest.java
+│   │   |   ├── BaseTest.java
+│   │   |   ├── TestFormsPage.java
+│   │   |   ├── TestCheckBoxPage.java
+│   │   |   └── TestAlertsPage.java
 │
 ├── pom.xml                       # Maven configuration file
 └── README.md                     # Project documentation

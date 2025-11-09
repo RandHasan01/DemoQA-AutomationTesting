@@ -21,7 +21,9 @@ public class ElementsPage {
 	private By elementOption = By.xpath("//h5[normalize-space()='Elements']");
 	private By checkboxOption = By.xpath("//span[text()='Check Box']");
 	private By ExpandElement = By.cssSelector(".rct-option.rct-option-expand-all");
+	private By divCheckboxLocator = By.className("rct-text");
 	private By checkboxsLocator = By.className("rct-title");
+	private By selectedCheckboxLocator = By.cssSelector(".rct-icon.rct-icon-check");
 	private By resultLocator = By.className("text-success");
 
 	public void openElementPage() throws InterruptedException {
@@ -36,11 +38,14 @@ public class ElementsPage {
 
 	}
 
-	public List<String> selectNumberOfCheckbox() {
+	public List<String> selectNumberOfCheckbox() throws InterruptedException {
 		WebElement expandButton = driver.findElement(ExpandElement);
 		expandButton.click();
+
+		List<WebElement> divCheckbox = driver.findElements(divCheckboxLocator);
+
 		List<WebElement> checkboxss = driver.findElements(checkboxsLocator);
-		int randomClick = rand.nextInt(2, checkboxss.size());
+		int randomClick = rand.nextInt(2, divCheckbox.size());
 		int steps = rand.nextInt(1, 6);
 		List<String> selected = new ArrayList<String>();
 
@@ -48,10 +53,20 @@ public class ElementsPage {
 		System.out.println("randomClick" + randomClick);
 		for (int i = 1; i < randomClick; i += steps) {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", checkboxss.get(i));
-			selected.add(checkboxss.get(i).getText());
 			checkboxss.get(i).click();
 		}
-//		System.out.println(selected);
+
+		Thread.sleep(1000);
+		List<WebElement> selectedCheckbox = driver.findElements(selectedCheckboxLocator);
+
+		for (int i = 0; i < selectedCheckbox.size(); i++) {
+			WebElement title = selectedCheckbox.get(i)
+					.findElement(By.xpath("./ancestor::label/span[@class='rct-title']"));
+			selected.add(title.getText());
+
+		}
+		System.out.println(selected);
+
 		return selected;
 	}
 
